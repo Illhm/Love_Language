@@ -1,4 +1,5 @@
 import json
+import random
 
 languages = {
     "A": "Words of Affirmation",
@@ -10,73 +11,66 @@ languages = {
 
 pairs = [
     # A vs B
-    ("Menerima pesan cinta dari pasangan", "A", "Menghabiskan waktu berdua tanpa gangguan", "B"),
-    ("Pasangan memuji saya di depan orang lain", "A", "Mengobrol santai dari hati ke hati dengan pasangan", "B"),
-    ("Mendengar pasangan berkata 'Aku mencintaimu'", "A", "Melakukan hobi bersama pasangan", "B"),
+    ("Mendapat chat panjang dari pacar yang isinya sayang-sayangan", "A", "Nge-date berdua aja tanpa pegang HP sama sekali", "B"),
+    ("Dipuji cantik/ganteng sama doi di depan temen-temen", "A", "Deep talk santai berdua dari hati ke hati", "B"),
+    ("Denger langsung ucapan 'Aku sayang banget sama kamu'", "A", "Ngelakuin hobi atau aktivitas seru bareng-bareng", "B"),
 
     # A vs C
-    ("Pasangan memuji penampilan saya", "A", "Menerima kejutan berupa barang dari pasangan", "C"),
-    ("Pasangan mengatakan bahwa saya berharga", "A", "Pasangan membawakan oleh-oleh saat pulang", "C"),
-    ("Pasangan mengucapkan terima kasih atas apa yang saya lakukan", "A", "Pasangan memberikan hadiah ulang tahun yang bermakna", "C"),
+    ("Doi ngasih pujian tulus soal penampilan aku hari ini", "A", "Dikasih surprise kado kecil-kecilan dari pacar", "C"),
+    ("Doi bilang kalau aku tuh berharga banget buat dia", "A", "Dibawain makanan atau oleh-oleh kesukaan pas dia abis main", "C"),
+    ("Doi ngucapin makasih banget atas hal kecil yang aku lakuin", "A", "Dikasih kado ulang tahun yang super niat dan bermakna", "C"),
 
     # A vs D
-    ("Pasangan mengingat dan memuji usaha saya", "A", "Pasangan membantu saya menyelesaikan tugas", "D"),
-    ("Pasangan memberikan apresiasi verbal", "A", "Pasangan mengambil alih tanggung jawab saya saat saya lelah", "D"),
-    ("Pasangan mengatakan betapa pentingnya saya baginya", "A", "Pasangan membuatkan minuman hangat untuk saya", "D"),
+    ("Pacar merhatiin dan muji usaha keras aku", "A", "Doi ngebantuin aku ngerjain tugas atau kerjaan yang numpuk", "D"),
+    ("Dikasih kata-kata apresiasi yang bikin semangat", "A", "Pas aku lagi capek banget, doi yang gantiin beresin kamar/rumah", "D"),
+    ("Doi ngomong betapa beruntungnya dia punya aku", "A", "Dibuatin kopi atau teh anget sama pacar", "D"),
 
     # A vs E
-    ("Pasangan menyemangati saya dengan kata-kata", "A", "Dipeluk oleh pasangan", "E"),
-    ("Pasangan memuji ide-ide saya", "A", "Pasangan duduk berdekatan dengan saya", "E"),
-    ("Pasangan memuji sifat atau karakter saya", "A", "Pasangan mengelus rambut saya", "E"),
+    ("Doi nyemangatin aku pakai kata-kata manis pas lagi down", "A", "Dipeluk erat dari belakang sama pacar", "E"),
+    ("Ide atau pendapat aku dipuji sama doi", "A", "Doi duduk nempel-nempel pas kita lagi sebelahan", "E"),
+    ("Doi muji kepribadian aku yang bikin dia jatuh cinta", "A", "Dielus-elus kepalanya sama doi", "E"),
 
     # B vs C
-    ("Pergi jalan-jalan berdua dengan pasangan", "B", "Diberikan hadiah kecil dari pasangan", "C"),
-    ("Memiliki jadwal rutin untuk kencan", "B", "Menerima hadiah kecil secara rutin", "C"),
-    ("Menghabiskan liburan bersama pasangan", "B", "Pasangan membelikan makanan kesukaan saya", "C"),
+    ("Jalan-jalan seharian berdua aja keliling kota", "B", "Dikasih hadiah kecil yang random tapi unyu", "C"),
+    ("Punya jadwal rutin buat pacaran (kayak movie night dsb)", "B", "Sering dikasih kejutan barang-barang lucu", "C"),
+    ("Liburan atau staycation bareng pacar", "B", "Tiba-tiba dibeliin martabak atau boba kesukaan tanpa minta", "C"),
 
     # B vs D
-    ("Pasangan mendengarkan keluh kesah saya dengan penuh perhatian", "B", "Pasangan membantu saya tanpa diminta", "D"),
-    ("Menonton film bersama pasangan", "B", "Pasangan memasakkan makanan untuk saya", "D"),
-    ("Pasangan menatap mata saya saat saya berbicara", "B", "Pasangan membawakan barang bawaan saya yang berat", "D"),
+    ("Doi beneran dengerin curhatan aku dengan fokus dan natep mata", "B", "Doi ngebantuin urusan aku tanpa aku harus minta tolong", "D"),
+    ("Nonton series bareng berdua di kasur", "B", "Dimasakin makanan enak sama pacar", "D"),
+    ("Ngasih full attention (perhatian penuh) pas aku lagi ngomong", "B", "Doi bawain barang bawaan aku pas lagi berat", "D"),
 
     # B vs E
-    ("Melakukan kegiatan bersama-sama dengan pasangan", "B", "Berpegangan tangan dengan pasangan", "E"),
-    ("Bercerita dengan pasangan sebelum tidur", "B", "Pasangan mengusap punggung saya", "E"),
-    ("Menghabiskan akhir pekan berdua saja", "B", "Duduk bersandar pada pasangan", "E"),
+    ("Ngabisin waktu ngelakuin kegiatan random bareng-bareng", "B", "Gandengan tangan sepanjang jalan pas lagi nge-date", "E"),
+    ("Ngelanjutin ngobrol asik sebelum tidur", "B", "Diusap-usap punggungnya pas lagi capek", "E"),
+    ("Weekend-an full berdua aja pokoknya", "B", "Nyender nyaman di bahu pacar", "E"),
 
     # C vs D
-    ("Menerima kado spesial dari pasangan", "C", "Pasangan membersihkan rumah untuk saya", "D"),
-    ("Pasangan membuatkan kerajinan tangan atau hadiah", "C", "Pasangan membantu merawat saya saat saya sakit", "D"),
-    ("Pasangan membelikan barang yang sudah lama saya idamkan", "C", "Pasangan mengurus keperluan rumah tangga", "D"),
+    ("Dapet kado spesial pas ngerayain anniversary", "C", "Doi bantuin beresin tempat aku yang berantakan", "D"),
+    ("Doi bikinin kado DIY (handmade) yang effort banget", "C", "Dirawat dan dijagain sama doi pas aku lagi sakit", "D"),
+    ("Dibelikan barang wishlist aku yang udah lama diidam-idamkan", "C", "Doi yang inisiatif nyuci piring abis kita makan", "D"),
 
     # C vs E
-    ("Menerima kejutan saat perayaan tertentu", "C", "Pasangan mencium kening saya", "E"),
-    ("Pasangan mengingat barang favorit saya dan membelikannya", "C", "Pasangan memijat saya saat saya lelah", "E"),
-    ("Pasangan memberikan bunga atau hadiah romantis", "C", "Pasangan memeluk saya erat", "E"),
+    ("Dapet kejutan di hari-hari spesial", "C", "Dicium keningnya sama pacar dengan lembut", "E"),
+    ("Doi nginget barang favorit aku trus beliin secara random", "C", "Dipijitin kakinya pas lagi pegel-pegel", "E"),
+    ("Dikasih bunga atau kado romantis", "C", "Dipeluk dengan hangat tanpa alasan", "E"),
 
     # D vs E
-    ("Pasangan diam-diam membelikan sesuatu untuk saya", "C", "Pasangan menyelesaikan pekerjaan yang tidak saya sukai", "D"), # Wait, this is C vs D. Need D vs E
-    ("Pasangan memperbaiki barang saya yang rusak", "D", "Bersentuhan secara fisik saat mengobrol", "E"),
-    ("Pasangan mengurus kendaraan saya", "D", "Pasangan memberikan sentuhan lembut", "E"),
+    ("Pacar nyiapin bekal atau sarapan buat aku", "D", "Tetep pegangan tangan pas lagi ngobrol serius", "E"),
+    ("Doi ngebenerin barang aku yang rusak", "D", "Dikasih sentuhan sayang secara fisik secara random", "E"),
+    ("Doi inisiatif manasin motor/mobil atau urusin kendaraan", "D", "Nyenderan sambil nonton atau main HP", "E"),
 ]
 
-# Fix the C vs D mistake above:
-pairs[27] = ("Pasangan menyiapkan bekal atau sarapan", "D", "Bergandengan tangan saat berjalan", "E")
-
-import random
-random.seed(42) # for reproducibility
+random.seed(42)
 random.shuffle(pairs)
 
 questions = []
 for i, (txt1, lang1, txt2, lang2) in enumerate(pairs, 1):
-
-    # Randomize order of A and B within the question
     options = [
         {"id": "A", "text": txt1, "language": languages[lang1]},
         {"id": "B", "text": txt2, "language": languages[lang2]}
     ]
     random.shuffle(options)
-    # Re-assign IDs just to be sure it's always A and B
     options[0]["id"] = "A"
     options[1]["id"] = "B"
 
@@ -89,4 +83,4 @@ for i, (txt1, lang1, txt2, lang2) in enumerate(pairs, 1):
 with open("questions.json", "w") as f:
     json.dump(questions, f, indent=2)
 
-print("questions.json generated with 30 questions.")
+print("Generated questions.json with modern/casual Indonesian")

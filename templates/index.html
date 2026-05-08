@@ -109,29 +109,50 @@
             background-color: #7c4dff;
             color: white;
             margin-left: auto;
+            box-shadow: 0 4px 6px rgba(124, 77, 255, 0.2);
         }
         .btn-next:hover, .btn-submit:hover {
             background-color: #651fff;
+            transform: translateY(-2px);
         }
         .btn-submit {
             display: none;
+            background-color: #00c853; /* Green for final action */
+            box-shadow: 0 4px 6px rgba(0, 200, 83, 0.2);
+        }
+        .btn-submit:hover {
+            background-color: #00e676;
         }
         .intro {
             background: white;
-            padding: 30px;
-            border-radius: 12px;
+            padding: 40px 30px;
+            border-radius: 16px;
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
         }
         .intro h1 {
             color: #7c4dff;
+            margin-bottom: 5px;
+            font-size: 2em;
+        }
+        .intro .subtitle {
+            color: #888;
+            margin-bottom: 30px;
+            font-size: 0.95em;
         }
         .intro button {
             background-color: #7c4dff;
             color: white;
             font-size: 1.1em;
             width: 100%;
-            margin-top: 20px;
+            padding: 15px;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(124, 77, 255, 0.3);
+            border-radius: 12px;
+        }
+        .intro button:hover {
+            transform: translateY(-2px);
+            background-color: #651fff;
         }
     </style>
 </head>
@@ -139,8 +160,9 @@
     <div class="container">
         <div id="intro" class="intro">
             <h1>Love Language Test</h1>
-            <p>Ketahui bahasa cinta utama Anda. Pada setiap halaman, pilih satu dari dua pernyataan yang <strong>paling</strong> membuat Anda merasa dicintai.</p>
-            <button type="button" onclick="startTest()">Mulai Tes</button>
+            <p class="subtitle">Buat Pasangan 👩‍❤️‍👨</p>
+            <p>Cari tau bahasa cinta utama kamu! Di setiap pertanyaan, pilih satu jawaban yang <strong>paling ngena</strong> dan bikin kamu ngerasa disayang banget.</p>
+            <button type="button" onclick="startTest()">Mulai Tes Sekarang ✨</button>
         </div>
 
         <form action="/submit" method="POST" id="testForm" style="display: none;">

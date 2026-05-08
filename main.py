@@ -1,61 +1,25 @@
-import json
-import uuid
-import urllib.parse
-from typing import Optional, Dict
-import uvicorn
-
 from fastapi import FastAPI, Request, Form, HTTPException, Cookie, Response, Depends
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
+import json
+import uuid
+import urllib.parse
+from typing import Optional, Dict
 
 app = FastAPI()
 
-# Inisialisasi folder untuk file HTML
 templates = Jinja2Templates(directory="templates")
-
-# Mount folder static (opsional, jika kamu punya file CSS/JS di folder 'static')
-# app.mount("/static", StaticFiles(directory="static"), name="static")
-
 # Load questions
-try:
-    with open("questions.json", "r") as f:
-        QUESTIONS = json.load(f)
-except FileNotFoundError:
-    print("Warning: File questions.json tidak ditemukan. Buat file tersebut agar aplikasi berjalan normal.")
-    QUESTIONS = []
-
-# In-memory session store (for simple double-submission prevention)
-# In production, use Redis or a proper database
-sessions: Dict[str, bool] = {}
-
-def get_session_id(request: Request, response: Response):
-    session_id = request.cookies.get("session_id")
-    if not session_id:
-        session_id = str(uuid.uuid4())
-        response.set_cookie(key="session_id", value=session_id, httponly=True)
-    return session_id
+with open("questions.json", "r") as f:
+    QUESTIONS = json.load(f)
 
 @app.get("/", response_class=HTMLResponse)
-async def read_instructions(request: Request, response: Response):
-    session_id = get_session_id(request, response)
-    # If session has already submitted, clear it to allow retaking, or just let them
-    # For now, we'll allow retaking by navigating to root
-    if session_id in sessions:
-        del sessions[session_id]
-
+async def read_instructions(request: Request):
     return templates.TemplateResponse(request=request, name="index.html", context={"questions": QUESTIONS})
 
 @app.post("/submit", response_class=HTMLResponse)
-async def submit_test(request: Request, response: Response):
-    session_id = request.cookies.get("session_id")
-    if not session_id:
-        return RedirectResponse(url="/", status_code=303)
-
-    if session_id in sessions and sessions[session_id]:
-        # Simple double submission check
-        return templates.TemplateResponse(request=request, name="error.html", context={"message": "Anda sudah mengisi tes ini."})
-
+async def submit_test(request: Request):
     form_data = await request.form()
 
     # 1. Validation and Scoring
@@ -68,8 +32,6 @@ async def submit_test(request: Request, response: Response):
     }
 
     total_questions = len(QUESTIONS)
-    if total_questions == 0:
-        raise HTTPException(status_code=500, detail="Data pertanyaan kosong.")
 
     for q in QUESTIONS:
         q_id = str(q["id"])
@@ -81,7 +43,7 @@ async def submit_test(request: Request, response: Response):
         # Find the language for the selected option
         selected_language = None
         for opt in q["options"]:
-            if str(opt["id"]) == str(selected_option_id):
+            if opt["id"] == selected_option_id:
                 selected_language = opt["language"]
                 break
 
@@ -101,9 +63,6 @@ async def submit_test(request: Request, response: Response):
          primary_display = " & ".join(tied_languages)
     else:
          primary_display = primary_language
-
-    # Mark session as submitted
-    sessions[session_id] = True
 
     # Calculate percentages and sort descending for the UI
     ranked_scores = sorted(
@@ -128,8 +87,3 @@ async def submit_test(request: Request, response: Response):
         "whatsapp_link": whatsapp_link,
         "total_questions": total_questions
     })
-
-# --- BLOK INI UNTUK MENJALANKAN SERVER DI PORT 8000 ---
-if __name__ == "__main__":
-    print("Menjalankan server di http://127.0.0.1:8080")
-    uvicorn.run("main:app", host="127.0.0.1", port=8080, reload=True)

@@ -4,12 +4,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Bercerita dengan pasangan sebelum tidur",
+        "text": "Ngelanjutin ngobrol asik sebelum tidur",
         "language": "Quality Time"
       },
       {
         "id": "B",
-        "text": "Pasangan mengusap punggung saya",
+        "text": "Diusap-usap punggungnya pas lagi capek",
         "language": "Physical Touch"
       }
     ]
@@ -19,12 +19,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Pasangan membelikan makanan kesukaan saya",
+        "text": "Tiba-tiba dibeliin martabak atau boba kesukaan tanpa minta",
         "language": "Receiving Gifts"
       },
       {
         "id": "B",
-        "text": "Menghabiskan liburan bersama pasangan",
+        "text": "Liburan atau staycation bareng pacar",
         "language": "Quality Time"
       }
     ]
@@ -34,12 +34,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Pasangan duduk berdekatan dengan saya",
+        "text": "Doi duduk nempel-nempel pas kita lagi sebelahan",
         "language": "Physical Touch"
       },
       {
         "id": "B",
-        "text": "Pasangan memuji ide-ide saya",
+        "text": "Ide atau pendapat aku dipuji sama doi",
         "language": "Words of Affirmation"
       }
     ]
@@ -49,12 +49,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Pasangan memberikan bunga atau hadiah romantis",
+        "text": "Dikasih bunga atau kado romantis",
         "language": "Receiving Gifts"
       },
       {
         "id": "B",
-        "text": "Pasangan memeluk saya erat",
+        "text": "Dipeluk dengan hangat tanpa alasan",
         "language": "Physical Touch"
       }
     ]
@@ -64,12 +64,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Pasangan membuatkan kerajinan tangan atau hadiah",
+        "text": "Doi bikinin kado DIY (handmade) yang effort banget",
         "language": "Receiving Gifts"
       },
       {
         "id": "B",
-        "text": "Pasangan membantu merawat saya saat saya sakit",
+        "text": "Dirawat dan dijagain sama doi pas aku lagi sakit",
         "language": "Acts of Service"
       }
     ]
@@ -79,12 +79,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Pasangan mengingat dan memuji usaha saya",
+        "text": "Pacar merhatiin dan muji usaha keras aku",
         "language": "Words of Affirmation"
       },
       {
         "id": "B",
-        "text": "Pasangan membantu saya menyelesaikan tugas",
+        "text": "Doi ngebantuin aku ngerjain tugas atau kerjaan yang numpuk",
         "language": "Acts of Service"
       }
     ]
@@ -94,12 +94,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Pasangan memberikan hadiah ulang tahun yang bermakna",
+        "text": "Dikasih kado ulang tahun yang super niat dan bermakna",
         "language": "Receiving Gifts"
       },
       {
         "id": "B",
-        "text": "Pasangan mengucapkan terima kasih atas apa yang saya lakukan",
+        "text": "Doi ngucapin makasih banget atas hal kecil yang aku lakuin",
         "language": "Words of Affirmation"
       }
     ]
@@ -109,12 +109,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Diberikan hadiah kecil dari pasangan",
+        "text": "Dikasih hadiah kecil yang random tapi unyu",
         "language": "Receiving Gifts"
       },
       {
         "id": "B",
-        "text": "Pergi jalan-jalan berdua dengan pasangan",
+        "text": "Jalan-jalan seharian berdua aja keliling kota",
         "language": "Quality Time"
       }
     ]
@@ -124,12 +124,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Pasangan memuji sifat atau karakter saya",
+        "text": "Doi muji kepribadian aku yang bikin dia jatuh cinta",
         "language": "Words of Affirmation"
       },
       {
         "id": "B",
-        "text": "Pasangan mengelus rambut saya",
+        "text": "Dielus-elus kepalanya sama doi",
         "language": "Physical Touch"
       }
     ]
@@ -139,12 +139,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Pasangan membantu saya tanpa diminta",
+        "text": "Doi ngebantuin urusan aku tanpa aku harus minta tolong",
         "language": "Acts of Service"
       },
       {
         "id": "B",
-        "text": "Pasangan mendengarkan keluh kesah saya dengan penuh perhatian",
+        "text": "Doi beneran dengerin curhatan aku dengan fokus dan natep mata",
         "language": "Quality Time"
       }
     ]
@@ -154,12 +154,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Dipeluk oleh pasangan",
+        "text": "Dipeluk erat dari belakang sama pacar",
         "language": "Physical Touch"
       },
       {
         "id": "B",
-        "text": "Pasangan menyemangati saya dengan kata-kata",
+        "text": "Doi nyemangatin aku pakai kata-kata manis pas lagi down",
         "language": "Words of Affirmation"
       }
     ]
@@ -169,12 +169,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Pasangan mengingat barang favorit saya dan membelikannya",
+        "text": "Doi nginget barang favorit aku trus beliin secara random",
         "language": "Receiving Gifts"
       },
       {
         "id": "B",
-        "text": "Pasangan memijat saya saat saya lelah",
+        "text": "Dipijitin kakinya pas lagi pegel-pegel",
         "language": "Physical Touch"
       }
     ]
@@ -184,12 +184,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Pasangan memberikan sentuhan lembut",
+        "text": "Nyenderan sambil nonton atau main HP",
         "language": "Physical Touch"
       },
       {
         "id": "B",
-        "text": "Pasangan mengurus kendaraan saya",
+        "text": "Doi inisiatif manasin motor/mobil atau urusin kendaraan",
         "language": "Acts of Service"
       }
     ]
@@ -199,12 +199,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Menerima kado spesial dari pasangan",
+        "text": "Dapet kado spesial pas ngerayain anniversary",
         "language": "Receiving Gifts"
       },
       {
         "id": "B",
-        "text": "Pasangan membersihkan rumah untuk saya",
+        "text": "Doi bantuin beresin tempat aku yang berantakan",
         "language": "Acts of Service"
       }
     ]
@@ -214,12 +214,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Menonton film bersama pasangan",
+        "text": "Nonton series bareng berdua di kasur",
         "language": "Quality Time"
       },
       {
         "id": "B",
-        "text": "Pasangan memasakkan makanan untuk saya",
+        "text": "Dimasakin makanan enak sama pacar",
         "language": "Acts of Service"
       }
     ]
@@ -229,12 +229,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Pasangan menyiapkan bekal atau sarapan",
+        "text": "Pacar nyiapin bekal atau sarapan buat aku",
         "language": "Acts of Service"
       },
       {
         "id": "B",
-        "text": "Bergandengan tangan saat berjalan",
+        "text": "Tetep pegangan tangan pas lagi ngobrol serius",
         "language": "Physical Touch"
       }
     ]
@@ -244,12 +244,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Mengobrol santai dari hati ke hati dengan pasangan",
+        "text": "Deep talk santai berdua dari hati ke hati",
         "language": "Quality Time"
       },
       {
         "id": "B",
-        "text": "Pasangan memuji saya di depan orang lain",
+        "text": "Dipuji cantik/ganteng sama doi di depan temen-temen",
         "language": "Words of Affirmation"
       }
     ]
@@ -259,12 +259,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Memiliki jadwal rutin untuk kencan",
+        "text": "Punya jadwal rutin buat pacaran (kayak movie night dsb)",
         "language": "Quality Time"
       },
       {
         "id": "B",
-        "text": "Menerima hadiah kecil secara rutin",
+        "text": "Sering dikasih kejutan barang-barang lucu",
         "language": "Receiving Gifts"
       }
     ]
@@ -274,12 +274,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Berpegangan tangan dengan pasangan",
+        "text": "Gandengan tangan sepanjang jalan pas lagi nge-date",
         "language": "Physical Touch"
       },
       {
         "id": "B",
-        "text": "Melakukan kegiatan bersama-sama dengan pasangan",
+        "text": "Ngabisin waktu ngelakuin kegiatan random bareng-bareng",
         "language": "Quality Time"
       }
     ]
@@ -289,12 +289,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Mendengar pasangan berkata 'Aku mencintaimu'",
+        "text": "Denger langsung ucapan 'Aku sayang banget sama kamu'",
         "language": "Words of Affirmation"
       },
       {
         "id": "B",
-        "text": "Melakukan hobi bersama pasangan",
+        "text": "Ngelakuin hobi atau aktivitas seru bareng-bareng",
         "language": "Quality Time"
       }
     ]
@@ -304,12 +304,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Pasangan membawakan barang bawaan saya yang berat",
+        "text": "Doi bawain barang bawaan aku pas lagi berat",
         "language": "Acts of Service"
       },
       {
         "id": "B",
-        "text": "Pasangan menatap mata saya saat saya berbicara",
+        "text": "Ngasih full attention (perhatian penuh) pas aku lagi ngomong",
         "language": "Quality Time"
       }
     ]
@@ -319,12 +319,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Pasangan memperbaiki barang saya yang rusak",
+        "text": "Doi ngebenerin barang aku yang rusak",
         "language": "Acts of Service"
       },
       {
         "id": "B",
-        "text": "Bersentuhan secara fisik saat mengobrol",
+        "text": "Dikasih sentuhan sayang secara fisik secara random",
         "language": "Physical Touch"
       }
     ]
@@ -334,12 +334,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Pasangan mengatakan bahwa saya berharga",
+        "text": "Doi bilang kalau aku tuh berharga banget buat dia",
         "language": "Words of Affirmation"
       },
       {
         "id": "B",
-        "text": "Pasangan membawakan oleh-oleh saat pulang",
+        "text": "Dibawain makanan atau oleh-oleh kesukaan pas dia abis main",
         "language": "Receiving Gifts"
       }
     ]
@@ -349,12 +349,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Pasangan mencium kening saya",
+        "text": "Dicium keningnya sama pacar dengan lembut",
         "language": "Physical Touch"
       },
       {
         "id": "B",
-        "text": "Menerima kejutan saat perayaan tertentu",
+        "text": "Dapet kejutan di hari-hari spesial",
         "language": "Receiving Gifts"
       }
     ]
@@ -364,12 +364,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Pasangan mengambil alih tanggung jawab saya saat saya lelah",
+        "text": "Pas aku lagi capek banget, doi yang gantiin beresin kamar/rumah",
         "language": "Acts of Service"
       },
       {
         "id": "B",
-        "text": "Pasangan memberikan apresiasi verbal",
+        "text": "Dikasih kata-kata apresiasi yang bikin semangat",
         "language": "Words of Affirmation"
       }
     ]
@@ -379,12 +379,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Pasangan membuatkan minuman hangat untuk saya",
+        "text": "Dibuatin kopi atau teh anget sama pacar",
         "language": "Acts of Service"
       },
       {
         "id": "B",
-        "text": "Pasangan mengatakan betapa pentingnya saya baginya",
+        "text": "Doi ngomong betapa beruntungnya dia punya aku",
         "language": "Words of Affirmation"
       }
     ]
@@ -394,12 +394,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Pasangan mengurus keperluan rumah tangga",
+        "text": "Doi yang inisiatif nyuci piring abis kita makan",
         "language": "Acts of Service"
       },
       {
         "id": "B",
-        "text": "Pasangan membelikan barang yang sudah lama saya idamkan",
+        "text": "Dibelikan barang wishlist aku yang udah lama diidam-idamkan",
         "language": "Receiving Gifts"
       }
     ]
@@ -409,12 +409,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Menerima pesan cinta dari pasangan",
+        "text": "Mendapat chat panjang dari pacar yang isinya sayang-sayangan",
         "language": "Words of Affirmation"
       },
       {
         "id": "B",
-        "text": "Menghabiskan waktu berdua tanpa gangguan",
+        "text": "Nge-date berdua aja tanpa pegang HP sama sekali",
         "language": "Quality Time"
       }
     ]
@@ -424,12 +424,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Menerima kejutan berupa barang dari pasangan",
+        "text": "Dikasih surprise kado kecil-kecilan dari pacar",
         "language": "Receiving Gifts"
       },
       {
         "id": "B",
-        "text": "Pasangan memuji penampilan saya",
+        "text": "Doi ngasih pujian tulus soal penampilan aku hari ini",
         "language": "Words of Affirmation"
       }
     ]
@@ -439,12 +439,12 @@
     "options": [
       {
         "id": "A",
-        "text": "Duduk bersandar pada pasangan",
+        "text": "Nyender nyaman di bahu pacar",
         "language": "Physical Touch"
       },
       {
         "id": "B",
-        "text": "Menghabiskan akhir pekan berdua saja",
+        "text": "Weekend-an full berdua aja pokoknya",
         "language": "Quality Time"
       }
     ]
