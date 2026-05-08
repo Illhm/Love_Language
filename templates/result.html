@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Tes Love Language</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e, #4a00e0);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            --text-primary: #ffffff;
+            --text-secondary: #b3b3cc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+            z-index: 1;
+            animation: slideUpFadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes slideUpFadeIn {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: var(--glass-shadow);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .result-header {
+            font-size: 0.9em;
+            color: #00d2ff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .icon {
+            font-size: 4em;
+            margin-bottom: 5px;
+            filter: drop-shadow(0 0 15px rgba(255,255,255,0.5));
+            animation: pulseIcon 2s infinite;
+        }
+
+        @keyframes pulseIcon {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Glowing Primary Title */
+        .primary-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
+            font-weight: 800;
+            margin: 5px 0 15px 0;
+            background: linear-gradient(to right, #ff8a00, #e52e71, #ff8a00);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 3s linear infinite;
+            text-transform: uppercase;
+            filter: drop-shadow(0 0 10px rgba(229, 46, 113, 0.4));
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        .primary-desc {
+            font-size: 1.05em;
+            line-height: 1.6;
+            color: #eaeaea;
+            padding: 0 10px;
+        }
+
+        /* Progress Bars */
+        .ranking-header {
+            font-size: 0.85em;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+
+        .rank-item {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .rank-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .rank-info.primary {
+            color: #e52e71;
+            font-weight: 700;
+            font-size: 1.05em;
+        }
+
+        .progress-bar-bg {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            height: 12px;
+            width: 100%;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            border-radius: 12px;
+            width: 0; /* Animated via JS */
+            transition: width 1.5s cubic-bezier(0.1, 0.7, 0.1, 1);
+            position: relative;
+        }
+
+        .progress-bar-fill::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Gradients for bars */
+        .color-0 { background: linear-gradient(90deg, #f12711, #f5af19); box-shadow: 0 0 10px rgba(245, 175, 25, 0.5); }
+        .color-1 { background: linear-gradient(90deg, #8A2387, #E94057); }
+        .color-2 { background: linear-gradient(90deg, #4facfe, #00f2fe); }
+        .color-3 { background: linear-gradient(90deg, #43e97b, #38f9d7); }
+        .color-4 { background: linear-gradient(90deg, #fa709a, #fee140); }
+
+        /* Action Buttons */
+        .action-title {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+
+        .btn-wa {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 18px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1em;
+            width: 100%;
+            margin-top: 15px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+            border: 2px solid transparent;
+        }
+
+        .btn-wa:hover {
+            transform: scale(1.05);
+            background: #1EBE55;
+            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.6);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        .btn-wa .wa-icon {
+            font-size: 1.5em;
+            line-height: 1;
+        }
+
+        .retry-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--text-secondary);
+            transition: color 0.3s;
+        }
+
+        .retry-link:hover {
+            color: white;
+            border-color: white;
+        }
+
+        /* Orbs */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            opacity: 0.4;
+            animation: float 10s infinite ease-in-out alternate;
+        }
+        .orb-1 { width: 300px; height: 300px; background: #e040fb; top: -50px; left: -100px; }
+        .orb-2 { width: 250px; height: 250px; background: #00d2ff; bottom: 0; right: -100px; animation-delay: -5s; }
+    </style>
+</head>
+<body>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <div class="container">
+        <div class="glass-panel">
+            <div class="result-header">✨ Hasil Tes Love Language ✨</div>
+            <div class="icon">💝</div>
+            <h1 class="primary-title">{{ primary_language }}</h1>
+            <div class="primary-desc">
+                Kamu ngerasa paling disayang lewat <strong>{{ primary_language }}</strong>. Tindakan nyata dan momen yang sesuai sama bahasa cinta ini bakal bikin hati kamu meleleh! 🥰
+            </div>
+        </div>
+
+        <div class="glass-panel">
+            <div class="ranking-header">📊 Rincian Skor Kamu 📊</div>
+
+            {% for item in ranked_scores %}
+            <div class="rank-item">
+                <div class="rank-info {% if loop.index0 == 0 %}primary{% endif %}">
+                    <span>{{ loop.index }}. {{ item.language }}</span>
+                    <span>{{ item.percentage }}%</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <!-- The data-width attribute holds the target percentage -->
+                    <div class="progress-bar-fill color-{{ loop.index0 }}" data-width="{{ item.percentage }}%"></div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="glass-panel">
+            <h2 class="action-title">Ajak Pacar/Doi Tes Juga! 👩‍❤️‍👨</h2>
+            <p style="color: var(--text-secondary); font-size: 0.9em; margin-bottom: 20px;">
+                Biar makin langgeng dan ngerti kode satu sama lain, suruh doi tes juga deh! Nanti bisa saling cocokin hasilnya.
+            </p>
+
+            <a href="{{ whatsapp_link }}" target="_blank" class="btn-wa">
+                <span class="wa-icon">💬</span>
+                Share Hasil ke WhatsApp
+            </a>
+
+            <a href="/" class="retry-link">↺ Mau Tes Ulang? Klik Sini</a>
+        </div>
+    </div>
+
+    <script>
+        // Trigger progress bar animations after a slight delay
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(() => {
+                const bars = document.querySelectorAll('.progress-bar-fill');
+                bars.forEach(bar => {
+                    const targetWidth = bar.getAttribute('data-width');
+                    bar.style.width = targetWidth;
+                });
+            }, 300); // 300ms delay for visual effect
+        });
+    </script>
+</body>
+</html>

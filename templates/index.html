@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Language Test For Couples</title>
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Variables & Reset */
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e, #4a00e0);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            --text-primary: #ffffff;
+            --text-secondary: #b3b3cc;
+            --accent-glow: #e040fb;
+            --accent-glow-secondary: #00d2ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Glassmorphism Panel */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px 30px;
+            box-shadow: var(--glass-shadow);
+            animation: slideUpFadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes slideUpFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Typography */
+        h1 {
+            font-weight: 700;
+            font-size: 2.2em;
+            text-align: center;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #ff8a00, #e52e71);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 4px 20px rgba(229, 46, 113, 0.4);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        /* Button Styles */
+        .btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: white;
+            background: linear-gradient(45deg, #8a2387, #e94057, #f27121);
+            background-size: 200% auto;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(233, 64, 87, 0.4);
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-position: right center;
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(233, 64, 87, 0.6);
+        }
+
+        .btn-prev {
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: none;
+        }
+
+        .btn-prev:hover {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+        }
+
+        .navigation {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        /* Question Form Styles */
+        .question-container {
+            display: none;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .question-container.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .progress-text {
+            text-align: center;
+            font-size: 0.85em;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: #00d2ff;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .main-question {
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        /* Custom Input Options */
+        .option-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .option-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .option-card.selected {
+            background: rgba(224, 64, 251, 0.15);
+            border-color: var(--accent-glow);
+            box-shadow: 0 0 20px rgba(224, 64, 251, 0.4);
+            transform: scale(1.02);
+        }
+
+        /* Glowing dot for selected state */
+        .option-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent-glow);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .option-card.selected::before {
+            opacity: 1;
+        }
+
+        .option-letter {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1em;
+            color: #00d2ff;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .option-card.selected .option-letter {
+            background: var(--accent-glow);
+            color: white;
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .option-text {
+            font-size: 1.05em;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        .hidden-radio {
+            display: none;
+        }
+
+        .btn-submit {
+            display: none;
+            background: linear-gradient(45deg, #11998e, #38ef7d);
+            box-shadow: 0 4px 15px rgba(56, 239, 125, 0.4);
+        }
+        .btn-submit:hover {
+            box-shadow: 0 8px 25px rgba(56, 239, 125, 0.6);
+        }
+
+        /* Floating background decorative orbs */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            opacity: 0.5;
+            animation: float 10s infinite ease-in-out alternate;
+        }
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: #e040fb;
+            top: -100px;
+            left: -100px;
+        }
+        .orb-2 {
+            width: 250px;
+            height: 250px;
+            background: #00d2ff;
+            bottom: -50px;
+            right: -100px;
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) scale(1); }
+            100% { transform: translateY(30px) scale(1.1); }
+        }
+
+        @media (max-width: 480px) {
+            .glass-panel { padding: 30px 20px; }
+            h1 { font-size: 1.8em; }
+            .main-question { font-size: 1.2em; }
+            .option-text { font-size: 0.95em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <div class="container">
+        <div id="intro" class="glass-panel">
+            <h1>Love Language Test</h1>
+            <p class="subtitle">Buat Pasangan 👩‍❤️‍👨</p>
+            <p style="text-align: center; line-height: 1.6; margin-bottom: 10px;">
+                Cari tau bahasa cinta utama kamu! Di setiap pertanyaan, pilih satu jawaban yang <strong>paling ngena</strong> dan bikin kamu ngerasa disayang banget.
+            </p>
+            <button type="button" class="btn" onclick="startTest()">Mulai Tes Sekarang ✨</button>
+        </div>
+
+        <form action="/submit" method="POST" id="testForm" style="display: none;">
+            {% for q in questions %}
+            <div class="glass-panel question-container" id="q-container-{{ loop.index }}">
+                <div class="progress-text">Pertanyaan {{ loop.index }} / {{ questions|length }}</div>
+                <div class="main-question">Mana yang lebih bikin kamu ngerasa dicintai?</div>
+
+                {% for opt in q.options %}
+                <label class="option-card" onclick="selectOption(this)">
+                    <input type="radio" name="{{ q.id }}" value="{{ opt.id }}" class="hidden-radio" required>
+                    <div class="option-letter">{{ opt.id }}</div>
+                    <div class="option-text">{{ opt.text }}</div>
+                </label>
+                {% endfor %}
+
+                <div class="navigation">
+                    {% if loop.index > 1 %}
+                    <button type="button" class="btn btn-prev" onclick="prevQuestion({{ loop.index }})">Kembali</button>
+                    {% endif %}
+
+                    {% if loop.index < questions|length %}
+                    <button type="button" class="btn" onclick="nextQuestion({{ loop.index }})">Selanjutnya</button>
+                    {% else %}
+                    <button type="submit" class="btn btn-submit" id="submitBtn">Lihat Hasil 🎉</button>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </form>
+    </div>
+
+    <script>
+        const totalQuestions = {{ questions|length }};
+
+        function startTest() {
+            document.getElementById('intro').style.display = 'none';
+            document.getElementById('testForm').style.display = 'block';
+            document.getElementById('q-container-1').classList.add('active');
+        }
+
+        function selectOption(labelElement) {
+            // Remove selected class from all labels in this question
+            const container = labelElement.closest('.question-container');
+            const labels = container.querySelectorAll('.option-card');
+            labels.forEach(l => l.classList.remove('selected'));
+
+            // Add selected class to the clicked one
+            labelElement.classList.add('selected');
+        }
+
+        function nextQuestion(currentIndex) {
+            // Check if current is answered
+            const container = document.getElementById(`q-container-${currentIndex}`);
+            const checked = container.querySelector('input[type="radio"]:checked');
+            if (!checked) {
+                // Add a little shake animation for feedback
+                container.style.animation = 'none';
+                void container.offsetWidth; // trigger reflow
+                container.style.animation = 'shake 0.4s ease-in-out';
+                return;
+            }
+
+            container.classList.remove('active');
+            document.getElementById(`q-container-${currentIndex + 1}`).classList.add('active');
+        }
+
+        function prevQuestion(currentIndex) {
+            document.getElementById(`q-container-${currentIndex}`).classList.remove('active');
+            document.getElementById(`q-container-${currentIndex - 1}`).classList.add('active');
+        }
+
+        // Handle enter key form submission block if not done
+        document.getElementById('testForm').addEventListener('submit', function(e) {
+            const lastContainer = document.getElementById(`q-container-${totalQuestions}`);
+            const checked = lastContainer.querySelector('input[type="radio"]:checked');
+            if (!checked) {
+                e.preventDefault();
+                lastContainer.style.animation = 'none';
+                void lastContainer.offsetWidth;
+                lastContainer.style.animation = 'shake 0.4s ease-in-out';
+            }
+        });
+
+        // Check if last question is answered to show submit
+        const form = document.getElementById('testForm');
+        form.addEventListener('change', function() {
+            const lastContainer = document.getElementById(`q-container-${totalQuestions}`);
+            if(lastContainer.querySelector('input[type="radio"]:checked')) {
+                document.getElementById('submitBtn').style.display = 'block';
+                // Hide 'next' if it was there (though on last page there is no next, just a precaution)
+                const nextBtn = lastContainer.querySelector('.btn-next');
+                if(nextBtn) nextBtn.style.display = 'none';
+            }
+        });
+
+        // Add shake keyframes dynamically for validation error
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                25% { transform: translateX(-10px); }
+                75% { transform: translateX(10px); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

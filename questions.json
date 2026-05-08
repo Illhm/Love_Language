@@ -1,0 +1,452 @@
+[
+  {
+    "id": 1,
+    "options": [
+      {
+        "id": "A",
+        "text": "Ngelanjutin ngobrol asik sebelum tidur",
+        "language": "Quality Time"
+      },
+      {
+        "id": "B",
+        "text": "Diusap-usap punggungnya pas lagi capek",
+        "language": "Physical Touch"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "options": [
+      {
+        "id": "A",
+        "text": "Tiba-tiba dibeliin martabak atau boba kesukaan tanpa minta",
+        "language": "Receiving Gifts"
+      },
+      {
+        "id": "B",
+        "text": "Liburan atau staycation bareng pacar",
+        "language": "Quality Time"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "options": [
+      {
+        "id": "A",
+        "text": "Doi duduk nempel-nempel pas kita lagi sebelahan",
+        "language": "Physical Touch"
+      },
+      {
+        "id": "B",
+        "text": "Ide atau pendapat aku dipuji sama doi",
+        "language": "Words of Affirmation"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "options": [
+      {
+        "id": "A",
+        "text": "Dikasih bunga atau kado romantis",
+        "language": "Receiving Gifts"
+      },
+      {
+        "id": "B",
+        "text": "Dipeluk dengan hangat tanpa alasan",
+        "language": "Physical Touch"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "options": [
+      {
+        "id": "A",
+        "text": "Doi bikinin kado DIY (handmade) yang effort banget",
+        "language": "Receiving Gifts"
+      },
+      {
+        "id": "B",
+        "text": "Dirawat dan dijagain sama doi pas aku lagi sakit",
+        "language": "Acts of Service"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pacar merhatiin dan muji usaha keras aku",
+        "language": "Words of Affirmation"
+      },
+      {
+        "id": "B",
+        "text": "Doi ngebantuin aku ngerjain tugas atau kerjaan yang numpuk",
+        "language": "Acts of Service"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "options": [
+      {
+        "id": "A",
+        "text": "Dikasih kado ulang tahun yang super niat dan bermakna",
+        "language": "Receiving Gifts"
+      },
+      {
+        "id": "B",
+        "text": "Doi ngucapin makasih banget atas hal kecil yang aku lakuin",
+        "language": "Words of Affirmation"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "options": [
+      {
+        "id": "A",
+        "text": "Dikasih hadiah kecil yang random tapi unyu",
+        "language": "Receiving Gifts"
+      },
+      {
+        "id": "B",
+        "text": "Jalan-jalan seharian berdua aja keliling kota",
+        "language": "Quality Time"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "options": [
+      {
+        "id": "A",
+        "text": "Doi muji kepribadian aku yang bikin dia jatuh cinta",
+        "language": "Words of Affirmation"
+      },
+      {
+        "id": "B",
+        "text": "Dielus-elus kepalanya sama doi",
+        "language": "Physical Touch"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "options": [
+      {
+        "id": "A",
+        "text": "Doi ngebantuin urusan aku tanpa aku harus minta tolong",
+        "language": "Acts of Service"
+      },
+      {
+        "id": "B",
+        "text": "Doi beneran dengerin curhatan aku dengan fokus dan natep mata",
+        "language": "Quality Time"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "options": [
+      {
+        "id": "A",
+        "text": "Dipeluk erat dari belakang sama pacar",
+        "language": "Physical Touch"
+      },
+      {
+        "id": "B",
+        "text": "Doi nyemangatin aku pakai kata-kata manis pas lagi down",
+        "language": "Words of Affirmation"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "options": [
+      {
+        "id": "A",
+        "text": "Doi nginget barang favorit aku trus beliin secara random",
+        "language": "Receiving Gifts"
+      },
+      {
+        "id": "B",
+        "text": "Dipijitin kakinya pas lagi pegel-pegel",
+        "language": "Physical Touch"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "options": [
+      {
+        "id": "A",
+        "text": "Nyenderan sambil nonton atau main HP",
+        "language": "Physical Touch"
+      },
+      {
+        "id": "B",
+        "text": "Doi inisiatif manasin motor/mobil atau urusin kendaraan",
+        "language": "Acts of Service"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "options": [
+      {
+        "id": "A",
+        "text": "Dapet kado spesial pas ngerayain anniversary",
+        "language": "Receiving Gifts"
+      },
+      {
+        "id": "B",
+        "text": "Doi bantuin beresin tempat aku yang berantakan",
+        "language": "Acts of Service"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "options": [
+      {
+        "id": "A",
+        "text": "Nonton series bareng berdua di kasur",
+        "language": "Quality Time"
+      },
+      {
+        "id": "B",
+        "text": "Dimasakin makanan enak sama pacar",
+        "language": "Acts of Service"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pacar nyiapin bekal atau sarapan buat aku",
+        "language": "Acts of Service"
+      },
+      {
+        "id": "B",
+        "text": "Tetep pegangan tangan pas lagi ngobrol serius",
+        "language": "Physical Touch"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "options": [
+      {
+        "id": "A",
+        "text": "Deep talk santai berdua dari hati ke hati",
+        "language": "Quality Time"
+      },
+      {
+        "id": "B",
+        "text": "Dipuji cantik/ganteng sama doi di depan temen-temen",
+        "language": "Words of Affirmation"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "options": [
+      {
+        "id": "A",
+        "text": "Punya jadwal rutin buat pacaran (kayak movie night dsb)",
+        "language": "Quality Time"
+      },
+      {
+        "id": "B",
+        "text": "Sering dikasih kejutan barang-barang lucu",
+        "language": "Receiving Gifts"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "options": [
+      {
+        "id": "A",
+        "text": "Gandengan tangan sepanjang jalan pas lagi nge-date",
+        "language": "Physical Touch"
+      },
+      {
+        "id": "B",
+        "text": "Ngabisin waktu ngelakuin kegiatan random bareng-bareng",
+        "language": "Quality Time"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "options": [
+      {
+        "id": "A",
+        "text": "Denger langsung ucapan 'Aku sayang banget sama kamu'",
+        "language": "Words of Affirmation"
+      },
+      {
+        "id": "B",
+        "text": "Ngelakuin hobi atau aktivitas seru bareng-bareng",
+        "language": "Quality Time"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "options": [
+      {
+        "id": "A",
+        "text": "Doi bawain barang bawaan aku pas lagi berat",
+        "language": "Acts of Service"
+      },
+      {
+        "id": "B",
+        "text": "Ngasih full attention (perhatian penuh) pas aku lagi ngomong",
+        "language": "Quality Time"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "options": [
+      {
+        "id": "A",
+        "text": "Doi ngebenerin barang aku yang rusak",
+        "language": "Acts of Service"
+      },
+      {
+        "id": "B",
+        "text": "Dikasih sentuhan sayang secara fisik secara random",
+        "language": "Physical Touch"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "options": [
+      {
+        "id": "A",
+        "text": "Doi bilang kalau aku tuh berharga banget buat dia",
+        "language": "Words of Affirmation"
+      },
+      {
+        "id": "B",
+        "text": "Dibawain makanan atau oleh-oleh kesukaan pas dia abis main",
+        "language": "Receiving Gifts"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "options": [
+      {
+        "id": "A",
+        "text": "Dicium keningnya sama pacar dengan lembut",
+        "language": "Physical Touch"
+      },
+      {
+        "id": "B",
+        "text": "Dapet kejutan di hari-hari spesial",
+        "language": "Receiving Gifts"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pas aku lagi capek banget, doi yang gantiin beresin kamar/rumah",
+        "language": "Acts of Service"
+      },
+      {
+        "id": "B",
+        "text": "Dikasih kata-kata apresiasi yang bikin semangat",
+        "language": "Words of Affirmation"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "options": [
+      {
+        "id": "A",
+        "text": "Dibuatin kopi atau teh anget sama pacar",
+        "language": "Acts of Service"
+      },
+      {
+        "id": "B",
+        "text": "Doi ngomong betapa beruntungnya dia punya aku",
+        "language": "Words of Affirmation"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "options": [
+      {
+        "id": "A",
+        "text": "Doi yang inisiatif nyuci piring abis kita makan",
+        "language": "Acts of Service"
+      },
+      {
+        "id": "B",
+        "text": "Dibelikan barang wishlist aku yang udah lama diidam-idamkan",
+        "language": "Receiving Gifts"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "options": [
+      {
+        "id": "A",
+        "text": "Mendapat chat panjang dari pacar yang isinya sayang-sayangan",
+        "language": "Words of Affirmation"
+      },
+      {
+        "id": "B",
+        "text": "Nge-date berdua aja tanpa pegang HP sama sekali",
+        "language": "Quality Time"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "options": [
+      {
+        "id": "A",
+        "text": "Dikasih surprise kado kecil-kecilan dari pacar",
+        "language": "Receiving Gifts"
+      },
+      {
+        "id": "B",
+        "text": "Doi ngasih pujian tulus soal penampilan aku hari ini",
+        "language": "Words of Affirmation"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "options": [
+      {
+        "id": "A",
+        "text": "Nyender nyaman di bahu pacar",
+        "language": "Physical Touch"
+      },
+      {
+        "id": "B",
+        "text": "Weekend-an full berdua aja pokoknya",
+        "language": "Quality Time"
+      }
+    ]
+  }
+]
