@@ -1,0 +1,332 @@
+[
+  {
+    "id": 1,
+    "option_a": {
+      "text": "Pasangan mengatakan bahwa ia menghargai saya.",
+      "language": "Words of Affirmation"
+    },
+    "option_b": {
+      "text": "Pasangan membantu saya menyelesaikan pekerjaan rumah.",
+      "language": "Acts of Service"
+    }
+  },
+  {
+    "id": 2,
+    "option_a": {
+      "text": "Pasangan memuji penampilan saya.",
+      "language": "Words of Affirmation"
+    },
+    "option_b": {
+      "text": "Pasangan memasak makanan kesukaan saya saat saya lelah.",
+      "language": "Acts of Service"
+    }
+  },
+  {
+    "id": 3,
+    "option_a": {
+      "text": "Pasangan mendukung saya dengan kata-kata penyemangat.",
+      "language": "Words of Affirmation"
+    },
+    "option_b": {
+      "text": "Pasangan mengambil alih tugas saya agar saya bisa istirahat.",
+      "language": "Acts of Service"
+    }
+  },
+  {
+    "id": 4,
+    "option_a": {
+      "text": "Pasangan mengucapkan \"Aku sayang kamu\" setiap hari.",
+      "language": "Words of Affirmation"
+    },
+    "option_b": {
+      "text": "Pasangan membelikan barang kecil yang saya butuhkan.",
+      "language": "Receiving Gifts"
+    }
+  },
+  {
+    "id": 5,
+    "option_a": {
+      "text": "Pasangan memuji pencapaian saya di depan orang lain.",
+      "language": "Words of Affirmation"
+    },
+    "option_b": {
+      "text": "Pasangan memberi kejutan berupa hadiah di hari biasa.",
+      "language": "Receiving Gifts"
+    }
+  },
+  {
+    "id": 6,
+    "option_a": {
+      "text": "Pasangan mengirim pesan teks manis di tengah hari sibuk.",
+      "language": "Words of Affirmation"
+    },
+    "option_b": {
+      "text": "Pasangan membawakan oleh-oleh saat pulang kerja.",
+      "language": "Receiving Gifts"
+    }
+  },
+  {
+    "id": 7,
+    "option_a": {
+      "text": "Pasangan secara rutin memuji kepribadian saya.",
+      "language": "Words of Affirmation"
+    },
+    "option_b": {
+      "text": "Pasangan merangkul saya saat berjalan bersama.",
+      "language": "Physical Touch"
+    }
+  },
+  {
+    "id": 8,
+    "option_a": {
+      "text": "Pasangan meninggalkan pesan cinta tertulis untuk saya.",
+      "language": "Words of Affirmation"
+    },
+    "option_b": {
+      "text": "Pasangan memegang tangan saya saat kami mengobrol.",
+      "language": "Physical Touch"
+    }
+  },
+  {
+    "id": 9,
+    "option_a": {
+      "text": "Pasangan mengatakan betapa berartinya saya baginya.",
+      "language": "Words of Affirmation"
+    },
+    "option_b": {
+      "text": "Pasangan duduk berdekatan dengan saya saat menonton TV.",
+      "language": "Physical Touch"
+    }
+  },
+  {
+    "id": 10,
+    "option_a": {
+      "text": "Pasangan selalu memiliki kata-kata manis untuk saya.",
+      "language": "Words of Affirmation"
+    },
+    "option_b": {
+      "text": "Pasangan mematikan ponselnya saat berbicara dengan saya.",
+      "language": "Quality Time"
+    }
+  },
+  {
+    "id": 11,
+    "option_a": {
+      "text": "Pasangan mengakui kehebatan saya setelah melakukan sesuatu.",
+      "language": "Words of Affirmation"
+    },
+    "option_b": {
+      "text": "Pasangan mengajak saya jalan-jalan berdua di akhir pekan.",
+      "language": "Quality Time"
+    }
+  },
+  {
+    "id": 12,
+    "option_a": {
+      "text": "Pasangan meyakinkan saya lewat kata-kata saat saya ragu.",
+      "language": "Words of Affirmation"
+    },
+    "option_b": {
+      "text": "Pasangan menghabiskan waktu luangnya bersama saya.",
+      "language": "Quality Time"
+    }
+  },
+  {
+    "id": 13,
+    "option_a": {
+      "text": "Pasangan mencucikan kendaraan saya tanpa diminta.",
+      "language": "Acts of Service"
+    },
+    "option_b": {
+      "text": "Pasangan memberi saya hadiah spesial di hari ulang tahun.",
+      "language": "Receiving Gifts"
+    }
+  },
+  {
+    "id": 14,
+    "option_a": {
+      "text": "Pasangan membereskan barang-barang yang berserakan.",
+      "language": "Acts of Service"
+    },
+    "option_b": {
+      "text": "Pasangan memberikan bunga atau makanan favorit saya.",
+      "language": "Receiving Gifts"
+    }
+  },
+  {
+    "id": 15,
+    "option_a": {
+      "text": "Pasangan mengurus keperluan administrasi saya.",
+      "language": "Acts of Service"
+    },
+    "option_b": {
+      "text": "Pasangan membelikan tiket liburan sebagai kejutan.",
+      "language": "Receiving Gifts"
+    }
+  },
+  {
+    "id": 16,
+    "option_a": {
+      "text": "Pasangan membantu saya menyelesaikan proyek yang sulit.",
+      "language": "Acts of Service"
+    },
+    "option_b": {
+      "text": "Pasangan memijat bahu saya saat saya stres.",
+      "language": "Physical Touch"
+    }
+  },
+  {
+    "id": 17,
+    "option_a": {
+      "text": "Pasangan membelikan barang belanjaan untuk kebutuhan rumah.",
+      "language": "Acts of Service"
+    },
+    "option_b": {
+      "text": "Pasangan mencium kening saya sebelum berangkat kerja.",
+      "language": "Physical Touch"
+    }
+  },
+  {
+    "id": 18,
+    "option_a": {
+      "text": "Pasangan mengantar atau menjemput saya.",
+      "language": "Acts of Service"
+    },
+    "option_b": {
+      "text": "Pasangan memeluk saya erat sepulang kerja.",
+      "language": "Physical Touch"
+    }
+  },
+  {
+    "id": 19,
+    "option_a": {
+      "text": "Pasangan memperbaiki barang saya yang rusak.",
+      "language": "Acts of Service"
+    },
+    "option_b": {
+      "text": "Pasangan mengobrol santai dengan saya tanpa gangguan.",
+      "language": "Quality Time"
+    }
+  },
+  {
+    "id": 20,
+    "option_a": {
+      "text": "Pasangan mengurus hewan peliharaan/anak saat saya sibuk.",
+      "language": "Acts of Service"
+    },
+    "option_b": {
+      "text": "Pasangan meluangkan waktu khusus untuk kencan rutin.",
+      "language": "Quality Time"
+    }
+  },
+  {
+    "id": 21,
+    "option_a": {
+      "text": "Pasangan membuatkan sarapan untuk saya.",
+      "language": "Acts of Service"
+    },
+    "option_b": {
+      "text": "Pasangan melakukan aktivitas hobi bersama saya.",
+      "language": "Quality Time"
+    }
+  },
+  {
+    "id": 22,
+    "option_a": {
+      "text": "Pasangan mengingat dan membelikan barang yang saya sebutkan.",
+      "language": "Receiving Gifts"
+    },
+    "option_b": {
+      "text": "Pasangan menyandarkan kepalanya di bahu saya.",
+      "language": "Physical Touch"
+    }
+  },
+  {
+    "id": 23,
+    "option_a": {
+      "text": "Pasangan memberi saya hadiah sebagai tanda permintaan maaf.",
+      "language": "Receiving Gifts"
+    },
+    "option_b": {
+      "text": "Pasangan membelai rambut saya saat bersantai.",
+      "language": "Physical Touch"
+    }
+  },
+  {
+    "id": 24,
+    "option_a": {
+      "text": "Pasangan membelikan pakaian atau aksesori untuk saya.",
+      "language": "Receiving Gifts"
+    },
+    "option_b": {
+      "text": "Pasangan menggenggam tangan saya di tempat umum.",
+      "language": "Physical Touch"
+    }
+  },
+  {
+    "id": 25,
+    "option_a": {
+      "text": "Pasangan memberikan hadiah buatan tangan.",
+      "language": "Receiving Gifts"
+    },
+    "option_b": {
+      "text": "Pasangan fokus mendengarkan cerita saya seharian.",
+      "language": "Quality Time"
+    }
+  },
+  {
+    "id": 26,
+    "option_a": {
+      "text": "Pasangan memberi kejutan paket ke kantor saya.",
+      "language": "Receiving Gifts"
+    },
+    "option_b": {
+      "text": "Pasangan mengajak saya makan malam romantis berdua.",
+      "language": "Quality Time"
+    }
+  },
+  {
+    "id": 27,
+    "option_a": {
+      "text": "Pasangan menghadiahi saya buku dari penulis favorit saya.",
+      "language": "Receiving Gifts"
+    },
+    "option_b": {
+      "text": "Pasangan menatap mata saya penuh perhatian saat berbicara.",
+      "language": "Quality Time"
+    }
+  },
+  {
+    "id": 28,
+    "option_a": {
+      "text": "Pasangan mengelus punggung saya untuk menenangkan.",
+      "language": "Physical Touch"
+    },
+    "option_b": {
+      "text": "Pasangan menemani saya jalan-jalan sore tanpa terburu-buru.",
+      "language": "Quality Time"
+    }
+  },
+  {
+    "id": 29,
+    "option_a": {
+      "text": "Pasangan secara spontan memeluk saya dari belakang.",
+      "language": "Physical Touch"
+    },
+    "option_b": {
+      "text": "Pasangan mengajak saya duduk bersama di taman dan mengobrol.",
+      "language": "Quality Time"
+    }
+  },
+  {
+    "id": 30,
+    "option_a": {
+      "text": "Pasangan tidur sambil berpegangan tangan dengan saya.",
+      "language": "Physical Touch"
+    },
+    "option_b": {
+      "text": "Pasangan membatalkan acara lain untuk menghabiskan waktu dengan saya.",
+      "language": "Quality Time"
+    }
+  }
+]
