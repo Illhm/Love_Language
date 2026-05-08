@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Tes Love Language</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .result-card {
+            background-color: #e8f5e9;
+            border-radius: 16px;
+            padding: 30px 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .result-header {
+            font-size: 0.8em;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+        .icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        .primary-title {
+            color: #2e7d32;
+            margin: 0 0 10px 0;
+            font-size: 1.8em;
+        }
+        .primary-percent {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        .primary-desc {
+            font-size: 0.9em;
+            color: #555;
+            line-height: 1.5;
+            padding: 0 20px;
+        }
+        .ranking-section {
+            background-color: white;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+        .ranking-header {
+            text-align: center;
+            font-size: 0.8em;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        .rank-item {
+            margin-bottom: 15px;
+        }
+        .rank-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-bottom: 5px;
+            align-items: center;
+        }
+        .rank-info.primary {
+            color: #2e7d32;
+        }
+        .progress-bar-bg {
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            height: 8px;
+            width: 100%;
+            overflow: hidden;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            border-radius: 8px;
+        }
+
+        /* Specific colors for bars matching the screenshot vaguely */
+        .color-0 { background-color: #2e7d32; }
+        .color-1 { background-color: #8e24aa; }
+        .color-2 { background-color: #e91e63; }
+        .color-3 { background-color: #ff5252; }
+        .color-4 { background-color: #5c6bc0; }
+
+        .action-card {
+            background-color: #1a1a2e;
+            color: white;
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+        }
+        .action-header {
+            font-size: 0.7em;
+            color: #888;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        .action-title {
+            margin: 0 0 15px 0;
+            font-size: 1.3em;
+        }
+        .action-desc {
+            font-size: 0.85em;
+            color: #bbb;
+            margin-bottom: 20px;
+        }
+        .buttons-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .btn-wa {
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 12px;
+            flex: 1;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .btn-share {
+            background-color: #7c4dff;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 12px;
+            flex: 1;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1em;
+        }
+        .btn-counseling {
+            background-color: #b388ff;
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 12px;
+            display: block;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .footer-links {
+            font-size: 0.8em;
+            color: #aaa;
+        }
+        .footer-links a {
+            color: #aaa;
+            text-decoration: underline;
+        }
+        .retry-link {
+            display: block;
+            text-align: center;
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="result-card">
+            <div class="result-header">HASIL TES LOVE LANGUAGE ANDA</div>
+            <div class="icon">🤝</div>
+            <h1 class="primary-title">{{ primary_language }}</h1>
+            <div class="primary-percent">{{ primary_percentage }}%</div>
+            <div class="primary-desc">
+                Anda merasa paling dicintai melalui {{ primary_language }}. Tindakan nyata dan interaksi sesuai bahasa ini sangat bermakna bagi Anda.
+            </div>
+        </div>
+
+        <div class="ranking-section">
+            <div class="ranking-header">RANKING BAHASA CINTA ANDA</div>
+
+            {% for item in ranked_scores %}
+            <div class="rank-item">
+                <div class="rank-info {% if loop.index0 == 0 %}primary{% endif %}">
+                    <span>{{ loop.index }}. {{ item.language }}</span>
+                    <span>{{ item.percentage }}% ({{ item.score }}/{{ total_questions }})</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill color-{{ loop.index0 }}" style="width: {{ item.percentage }}%;"></div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="action-card">
+            <div class="action-header">BAGIKAN & LANJUTKAN</div>
+            <h2 class="action-title">Ajak Pasangan Tes Juga!</h2>
+            <div class="action-desc">
+                Dengan mengetahui love language masing-masing, komunikasi dalam hubungan akan makin berkualitas.
+            </div>
+
+            <div class="buttons-row">
+                <a href="{{ whatsapp_link }}" target="_blank" class="btn-wa">
+                    <span>KIRIM KE<br>WhatsApp</span>
+                    <span>💬</span>
+                </a>
+                <button class="btn-share" onclick="copyLink()">
+                    <span>BAGIKAN<br>Share Link</span>
+                    <span>🔗</span>
+                </button>
+            </div>
+
+            <a href="#" class="btn-counseling">KONSELING PASANGAN (PILIH CABANG)</a>
+
+            <div class="footer-links">
+                <a href="#">Pelajari Konseling Pasangan</a> • <a href="#">Tools Lainnya</a>
+            </div>
+        </div>
+
+        <a href="/" class="retry-link">↺ Ulangi Tes</a>
+    </div>
+
+    <script>
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.origin).then(function() {
+                alert('Link disalin ke clipboard!');
+            }, function(err) {
+                alert('Gagal menyalin link.');
+            });
+        }
+    </script>
+</body>
+</html>

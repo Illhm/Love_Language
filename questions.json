@@ -1,0 +1,452 @@
+[
+  {
+    "id": 1,
+    "options": [
+      {
+        "id": "A",
+        "text": "Bercerita dengan pasangan sebelum tidur",
+        "language": "Quality Time"
+      },
+      {
+        "id": "B",
+        "text": "Pasangan mengusap punggung saya",
+        "language": "Physical Touch"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pasangan membelikan makanan kesukaan saya",
+        "language": "Receiving Gifts"
+      },
+      {
+        "id": "B",
+        "text": "Menghabiskan liburan bersama pasangan",
+        "language": "Quality Time"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pasangan duduk berdekatan dengan saya",
+        "language": "Physical Touch"
+      },
+      {
+        "id": "B",
+        "text": "Pasangan memuji ide-ide saya",
+        "language": "Words of Affirmation"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pasangan memberikan bunga atau hadiah romantis",
+        "language": "Receiving Gifts"
+      },
+      {
+        "id": "B",
+        "text": "Pasangan memeluk saya erat",
+        "language": "Physical Touch"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pasangan membuatkan kerajinan tangan atau hadiah",
+        "language": "Receiving Gifts"
+      },
+      {
+        "id": "B",
+        "text": "Pasangan membantu merawat saya saat saya sakit",
+        "language": "Acts of Service"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pasangan mengingat dan memuji usaha saya",
+        "language": "Words of Affirmation"
+      },
+      {
+        "id": "B",
+        "text": "Pasangan membantu saya menyelesaikan tugas",
+        "language": "Acts of Service"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pasangan memberikan hadiah ulang tahun yang bermakna",
+        "language": "Receiving Gifts"
+      },
+      {
+        "id": "B",
+        "text": "Pasangan mengucapkan terima kasih atas apa yang saya lakukan",
+        "language": "Words of Affirmation"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "options": [
+      {
+        "id": "A",
+        "text": "Diberikan hadiah kecil dari pasangan",
+        "language": "Receiving Gifts"
+      },
+      {
+        "id": "B",
+        "text": "Pergi jalan-jalan berdua dengan pasangan",
+        "language": "Quality Time"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pasangan memuji sifat atau karakter saya",
+        "language": "Words of Affirmation"
+      },
+      {
+        "id": "B",
+        "text": "Pasangan mengelus rambut saya",
+        "language": "Physical Touch"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pasangan membantu saya tanpa diminta",
+        "language": "Acts of Service"
+      },
+      {
+        "id": "B",
+        "text": "Pasangan mendengarkan keluh kesah saya dengan penuh perhatian",
+        "language": "Quality Time"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "options": [
+      {
+        "id": "A",
+        "text": "Dipeluk oleh pasangan",
+        "language": "Physical Touch"
+      },
+      {
+        "id": "B",
+        "text": "Pasangan menyemangati saya dengan kata-kata",
+        "language": "Words of Affirmation"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pasangan mengingat barang favorit saya dan membelikannya",
+        "language": "Receiving Gifts"
+      },
+      {
+        "id": "B",
+        "text": "Pasangan memijat saya saat saya lelah",
+        "language": "Physical Touch"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pasangan memberikan sentuhan lembut",
+        "language": "Physical Touch"
+      },
+      {
+        "id": "B",
+        "text": "Pasangan mengurus kendaraan saya",
+        "language": "Acts of Service"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menerima kado spesial dari pasangan",
+        "language": "Receiving Gifts"
+      },
+      {
+        "id": "B",
+        "text": "Pasangan membersihkan rumah untuk saya",
+        "language": "Acts of Service"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menonton film bersama pasangan",
+        "language": "Quality Time"
+      },
+      {
+        "id": "B",
+        "text": "Pasangan memasakkan makanan untuk saya",
+        "language": "Acts of Service"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pasangan menyiapkan bekal atau sarapan",
+        "language": "Acts of Service"
+      },
+      {
+        "id": "B",
+        "text": "Bergandengan tangan saat berjalan",
+        "language": "Physical Touch"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "options": [
+      {
+        "id": "A",
+        "text": "Mengobrol santai dari hati ke hati dengan pasangan",
+        "language": "Quality Time"
+      },
+      {
+        "id": "B",
+        "text": "Pasangan memuji saya di depan orang lain",
+        "language": "Words of Affirmation"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "options": [
+      {
+        "id": "A",
+        "text": "Memiliki jadwal rutin untuk kencan",
+        "language": "Quality Time"
+      },
+      {
+        "id": "B",
+        "text": "Menerima hadiah kecil secara rutin",
+        "language": "Receiving Gifts"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "options": [
+      {
+        "id": "A",
+        "text": "Berpegangan tangan dengan pasangan",
+        "language": "Physical Touch"
+      },
+      {
+        "id": "B",
+        "text": "Melakukan kegiatan bersama-sama dengan pasangan",
+        "language": "Quality Time"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "options": [
+      {
+        "id": "A",
+        "text": "Mendengar pasangan berkata 'Aku mencintaimu'",
+        "language": "Words of Affirmation"
+      },
+      {
+        "id": "B",
+        "text": "Melakukan hobi bersama pasangan",
+        "language": "Quality Time"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pasangan membawakan barang bawaan saya yang berat",
+        "language": "Acts of Service"
+      },
+      {
+        "id": "B",
+        "text": "Pasangan menatap mata saya saat saya berbicara",
+        "language": "Quality Time"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pasangan memperbaiki barang saya yang rusak",
+        "language": "Acts of Service"
+      },
+      {
+        "id": "B",
+        "text": "Bersentuhan secara fisik saat mengobrol",
+        "language": "Physical Touch"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pasangan mengatakan bahwa saya berharga",
+        "language": "Words of Affirmation"
+      },
+      {
+        "id": "B",
+        "text": "Pasangan membawakan oleh-oleh saat pulang",
+        "language": "Receiving Gifts"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pasangan mencium kening saya",
+        "language": "Physical Touch"
+      },
+      {
+        "id": "B",
+        "text": "Menerima kejutan saat perayaan tertentu",
+        "language": "Receiving Gifts"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pasangan mengambil alih tanggung jawab saya saat saya lelah",
+        "language": "Acts of Service"
+      },
+      {
+        "id": "B",
+        "text": "Pasangan memberikan apresiasi verbal",
+        "language": "Words of Affirmation"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pasangan membuatkan minuman hangat untuk saya",
+        "language": "Acts of Service"
+      },
+      {
+        "id": "B",
+        "text": "Pasangan mengatakan betapa pentingnya saya baginya",
+        "language": "Words of Affirmation"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "options": [
+      {
+        "id": "A",
+        "text": "Pasangan mengurus keperluan rumah tangga",
+        "language": "Acts of Service"
+      },
+      {
+        "id": "B",
+        "text": "Pasangan membelikan barang yang sudah lama saya idamkan",
+        "language": "Receiving Gifts"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menerima pesan cinta dari pasangan",
+        "language": "Words of Affirmation"
+      },
+      {
+        "id": "B",
+        "text": "Menghabiskan waktu berdua tanpa gangguan",
+        "language": "Quality Time"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "options": [
+      {
+        "id": "A",
+        "text": "Menerima kejutan berupa barang dari pasangan",
+        "language": "Receiving Gifts"
+      },
+      {
+        "id": "B",
+        "text": "Pasangan memuji penampilan saya",
+        "language": "Words of Affirmation"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "options": [
+      {
+        "id": "A",
+        "text": "Duduk bersandar pada pasangan",
+        "language": "Physical Touch"
+      },
+      {
+        "id": "B",
+        "text": "Menghabiskan akhir pekan berdua saja",
+        "language": "Quality Time"
+      }
+    ]
+  }
+]

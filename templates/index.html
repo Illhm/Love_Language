@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Language Test For Couples</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: transparent;
+        }
+        .question-container {
+            display: none; /* Hide all initially, JS will show one by one */
+        }
+        .question-container.active {
+            display: block;
+        }
+        .progress-text {
+            text-align: center;
+            font-size: 0.8em;
+            color: #888;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .main-question {
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .sub-instruction {
+            text-align: center;
+            font-size: 0.85em;
+            color: #999;
+            margin-bottom: 25px;
+        }
+        .option-card {
+            background-color: #fff;
+            border: 1px solid #eaeaea;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+        .option-card:hover {
+            border-color: #d1c4e9;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .option-card.selected {
+            border-color: #7c4dff;
+            background-color: #f3e5f5;
+        }
+        .option-letter {
+            background-color: #ede7f6;
+            color: #7c4dff;
+            font-weight: bold;
+            font-size: 0.8em;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .option-text {
+            font-weight: 500;
+            color: #222;
+        }
+        .hidden-radio {
+            display: none;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        .btn-prev {
+            background-color: #e0e0e0;
+            color: #555;
+        }
+        .btn-prev:hover {
+            background-color: #ccc;
+        }
+        .btn-next, .btn-submit {
+            background-color: #7c4dff;
+            color: white;
+            margin-left: auto;
+        }
+        .btn-next:hover, .btn-submit:hover {
+            background-color: #651fff;
+        }
+        .btn-submit {
+            display: none;
+        }
+        .intro {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .intro h1 {
+            color: #7c4dff;
+        }
+        .intro button {
+            background-color: #7c4dff;
+            color: white;
+            font-size: 1.1em;
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="intro" class="intro">
+            <h1>Love Language Test</h1>
+            <p>Ketahui bahasa cinta utama Anda. Pada setiap halaman, pilih satu dari dua pernyataan yang <strong>paling</strong> membuat Anda merasa dicintai.</p>
+            <button type="button" onclick="startTest()">Mulai Tes</button>
+        </div>
+
+        <form action="/submit" method="POST" id="testForm" style="display: none;">
+            {% for q in questions %}
+            <div class="question-container" id="q-container-{{ loop.index }}">
+                <div class="progress-text">PERTANYAAN {{ loop.index }} DARI {{ questions|length }}</div>
+                <div class="main-question">Mana yang lebih membuat Anda merasa dicintai?</div>
+                <div class="sub-instruction">Pilih salah satu yang paling sesuai</div>
+
+                {% for opt in q.options %}
+                <label class="option-card" onclick="selectOption(this, '{{ q.id }}')">
+                    <input type="radio" name="{{ q.id }}" value="{{ opt.id }}" class="hidden-radio" required>
+                    <div class="option-letter">{{ opt.id }}</div>
+                    <div class="option-text">{{ opt.text }}</div>
+                </label>
+                {% endfor %}
+
+                <div class="navigation">
+                    {% if loop.index > 1 %}
+                    <button type="button" class="btn-prev" onclick="prevQuestion({{ loop.index }})">Kembali</button>
+                    {% endif %}
+
+                    {% if loop.index < questions|length %}
+                    <button type="button" class="btn-next" onclick="nextQuestion({{ loop.index }})">Selanjutnya</button>
+                    {% else %}
+                    <button type="submit" class="btn-submit" id="submitBtn">Lihat Hasil</button>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </form>
+    </div>
+
+    <script>
+        const totalQuestions = {{ questions|length }};
+
+        function startTest() {
+            document.getElementById('intro').style.display = 'none';
+            document.getElementById('testForm').style.display = 'block';
+            document.getElementById('q-container-1').classList.add('active');
+        }
+
+        function selectOption(labelElement, qId) {
+            // Remove selected class from all labels in this question
+            const container = labelElement.closest('.question-container');
+            const labels = container.querySelectorAll('.option-card');
+            labels.forEach(l => l.classList.remove('selected'));
+
+            // Add selected class to the clicked one
+            labelElement.classList.add('selected');
+        }
+
+        function nextQuestion(currentIndex) {
+            // Check if current is answered
+            const container = document.getElementById(`q-container-${currentIndex}`);
+            const checked = container.querySelector('input[type="radio"]:checked');
+            if (!checked) {
+                alert("Pilih salah satu jawaban terlebih dahulu.");
+                return;
+            }
+
+            container.classList.remove('active');
+            document.getElementById(`q-container-${currentIndex + 1}`).classList.add('active');
+        }
+
+        function prevQuestion(currentIndex) {
+            document.getElementById(`q-container-${currentIndex}`).classList.remove('active');
+            document.getElementById(`q-container-${currentIndex - 1}`).classList.add('active');
+        }
+
+        document.getElementById('testForm').addEventListener('submit', function(e) {
+            // Final validation just in case
+            const lastContainer = document.getElementById(`q-container-${totalQuestions}`);
+            const checked = lastContainer.querySelector('input[type="radio"]:checked');
+            if (!checked) {
+                e.preventDefault();
+                alert("Pilih salah satu jawaban terlebih dahulu.");
+            }
+        });
+
+        // Check if last question is answered to show submit
+        const form = document.getElementById('testForm');
+        form.addEventListener('change', function() {
+            const lastContainer = document.getElementById(`q-container-${totalQuestions}`);
+            if(lastContainer.querySelector('input[type="radio"]:checked')) {
+                document.getElementById('submitBtn').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
