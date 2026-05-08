@@ -7,121 +7,75 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="result-body">
-    <div class="result-container">
+<body>
+    <div class="glass-container">
 
-        <!-- Primary Love Language Card -->
-        <p class="section-title">HASIL TES LOVE LANGUAGE ANDA</p>
-        <div class="primary-card">
-            <div class="icon-wrapper">
-                {% if primary.language == 'Acts of Service' %}
-                    <i class="fa-solid fa-handshake-angle icon-primary"></i>
-                {% elif primary.language == 'Words of Affirmation' %}
-                    <i class="fa-regular fa-comment-dots icon-primary"></i>
-                {% elif primary.language == 'Receiving Gifts' %}
-                    <i class="fa-solid fa-gift icon-primary"></i>
-                {% elif primary.language == 'Physical Touch' %}
-                    <i class="fa-solid fa-heart icon-primary"></i>
-                {% elif primary.language == 'Quality Time' %}
-                    <i class="fa-solid fa-clock icon-primary"></i>
-                {% endif %}
-            </div>
+        <div class="result-header">
+            <p style="font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #cbd5e1;">Hasil Tes Anda</p>
+        </div>
+
+        <!-- Glowing Primary Card -->
+        <div class="primary-lang-container">
             <h1 class="primary-title">{{ primary.language }}</h1>
-            <p class="primary-percentage">{{ primary.percentage }}%</p>
+            <div class="primary-percent">{{ primary.percentage }}%</div>
             <p class="primary-desc">
                 {% if primary.language == 'Acts of Service' %}
-                    Anda merasa paling dicintai ketika pasangan membantu dan melakukan sesuatu untuk Anda. Tindakan nyata berbicara lebih keras dari kata-kata.
+                    Tindakan nyata berbicara lebih keras dari kata-kata. Anda merasa sangat dicintai saat pasangan membantu meringankan beban Anda tanpa diminta.
                 {% elif primary.language == 'Words of Affirmation' %}
-                    Anda merasa paling dicintai ketika mendengar pujian, kata-kata apresiasi, dan ungkapan kasih sayang verbal.
+                    Kata-kata memiliki kekuatan magis bagi Anda. Anda merasa paling dicintai melalui pujian tulus, apresiasi, dan kalimat cinta verbal.
                 {% elif primary.language == 'Receiving Gifts' %}
-                    Anda merasa paling dicintai melalui pemberian hadiah, yang bagi Anda adalah simbol nyata dari pemikiran dan usaha pasangan.
+                    Bagi Anda, hadiah adalah simbol visual dari cinta. Anda merasa dicintai saat melihat usaha dan pikiran pasangan dalam memberikan sesuatu yang bermakna.
                 {% elif primary.language == 'Physical Touch' %}
-                    Anda merasa paling dicintai melalui sentuhan fisik yang penuh kasih, seperti pelukan, ciuman, dan berpegangan tangan.
+                    Sentuhan fisik adalah pelukan emosional bagi Anda. Anda merasa paling terhubung melalui pelukan, genggaman tangan, dan kedekatan fisik.
                 {% elif primary.language == 'Quality Time' %}
-                    Anda merasa paling dicintai ketika pasangan memberikan perhatian penuh dan waktu berkualitas bersama Anda tanpa gangguan.
+                    Perhatian penuh tak terbagi adalah cinta sejati. Anda merasa paling dihargai saat pasangan meluangkan waktu khusus untuk Anda tanpa gangguan.
                 {% endif %}
             </p>
         </div>
 
-        <!-- Ranking Section -->
-        <p class="section-title">RANKING BAHASA CINTA ANDA</p>
-        <div class="ranking-list">
+        <!-- Animated Ranking Section -->
+        <div class="rank-section">
+            <h3 class="rank-title">Profil Bahasa Cinta Lengkap</h3>
+
             {% for r in results %}
             <div class="rank-item">
                 <div class="rank-header">
-                    <span class="rank-name">
-                        {% if r.language == 'Acts of Service' %}
-                            <i class="fa-solid fa-handshake-angle icon-small" style="color: #2e7d32;"></i>
-                        {% elif r.language == 'Words of Affirmation' %}
-                            <i class="fa-regular fa-comment-dots icon-small" style="color: #651fff;"></i>
-                        {% elif r.language == 'Receiving Gifts' %}
-                            <i class="fa-solid fa-gift icon-small" style="color: #f50057;"></i>
-                        {% elif r.language == 'Physical Touch' %}
-                            <i class="fa-solid fa-heart icon-small" style="color: #ff4081;"></i>
-                        {% elif r.language == 'Quality Time' %}
-                            <i class="fa-solid fa-clock icon-small" style="color: #3d5afe;"></i>
-                        {% endif %}
-                        {{ loop.index }}. {{ r.language }}
-                    </span>
-                    <span class="rank-score">{{ r.percentage }}% ({{ r.score }}/30)</span>
+                    <span>{{ loop.index }}. {{ r.language }}</span>
+                    <span style="opacity: 0.8; font-size: 12px;">{{ r.percentage }}%</span>
                 </div>
                 <div class="rank-bar-bg">
-                    <div class="rank-bar-fill
-                        {% if r.language == 'Acts of Service' %} bg-green
-                        {% elif r.language == 'Words of Affirmation' %} bg-purple
-                        {% elif r.language == 'Receiving Gifts' %} bg-pink
-                        {% elif r.language == 'Physical Touch' %} bg-red
-                        {% elif r.language == 'Quality Time' %} bg-blue
-                        {% endif %}"
-                        style="width: {{ r.percentage }}%;"></div>
+                    <!-- Progress bar fills are animated in JS to slide from 0 -->
+                    <div class="rank-bar-fill color-{{ loop.index0 }}" data-width="{{ r.percentage }}%"></div>
                 </div>
             </div>
             {% endfor %}
         </div>
 
         <!-- Action Card -->
-        <div class="action-card">
-            <p class="action-subtitle">BAGIKAN & LANJUTKAN</p>
-            <h2 class="action-title">Ajak Pasangan Tes Juga!</h2>
-            <p class="action-desc">Dengan mengetahui love language masing-masing, komunikasi dalam hubungan akan makin berkualitas.</p>
+        <div class="share-section">
+            <p style="font-size: 14px; margin-bottom: 20px;">Bagikan hasil ini dengan pasangan agar hubungan semakin harmonis!</p>
 
-            <div class="btn-group-row">
-                <a href="{{ wa_link }}" target="_blank" class="btn-action btn-wa">
-                    <div class="btn-text">
-                        <small>KIRIM KE</small>
-                        <span>WhatsApp</span>
-                    </div>
-                    <i class="fa-brands fa-whatsapp btn-icon"></i>
-                </a>
-                <button onclick="copyLink()" class="btn-action btn-share">
-                    <div class="btn-text">
-                        <small>BAGIKAN</small>
-                        <span>Share Link</span>
-                    </div>
-                    <i class="fa-solid fa-link btn-icon"></i>
-                </button>
-            </div>
-
-            <a href="#" class="btn-action btn-counseling">
-                KONSELING PASANGAN (PILIH CABANG)
+            <a href="{{ wa_link }}" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Bagikan ke WhatsApp
             </a>
 
-            <div class="action-links">
-                <a href="#">Pelajari Konseling Pasangan</a> • <a href="#">Tools Lainnya</a>
-            </div>
-        </div>
-
-        <div class="reset-container">
-            <a href="{{ url_for('reset') }}" class="btn-reset"><i class="fa-solid fa-rotate-right"></i> Ulangi Tes</a>
+            <form action="{{ url_for('reset') }}" method="GET">
+                <button type="submit" class="btn btn-reset">Ulangi Tes</button>
+            </form>
         </div>
 
     </div>
 
     <script>
-        function copyLink() {
-            navigator.clipboard.writeText(window.location.origin);
-            alert("Link telah disalin!");
-        }
+        // Trigger progress bar animations on load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const bars = document.querySelectorAll('.rank-bar-fill');
+                bars.forEach(bar => {
+                    bar.style.width = bar.getAttribute('data-width');
+                });
+            }, 300); // slight delay for visual effect
+        });
     </script>
 </body>
 </html>

@@ -7,21 +7,22 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="container test-container">
-        <h1>Tes Love Language</h1>
-        <p class="instruction-text">Pilih salah satu pernyataan yang paling menggambarkan apa yang membuat Anda merasa dicintai.</p>
-
-        <!-- Progress Bar Indicator (Optional visual element) -->
-        <div class="progress-container">
-            <div class="progress-bar" id="progressBar" style="width: 0%;"></div>
+    <div class="glass-container">
+        <div class="test-header">
+            <h1>Tes Love Language</h1>
+            <p style="font-size: 14px; opacity: 0.8;">Pilih salah satu pernyataan yang paling menggambarkan apa yang membuat Anda merasa dicintai.</p>
         </div>
-        <p class="progress-text" id="progressText">0 / 30 Terjawab</p>
+
+        <div class="progress-wrapper">
+            <div class="progress-fill" id="progressBar"></div>
+        </div>
+        <p class="progress-text" id="progressText">0 / {{ questions|length }} Terjawab</p>
 
         {% with messages = get_flashed_messages() %}
           {% if messages %}
             <div class="alert">
                 {% for message in messages %}
-                  <p>{{ message }}</p>
+                  {{ message }}
                 {% endfor %}
             </div>
           {% endif %}
@@ -29,7 +30,7 @@
 
         <form action="{{ url_for('submit') }}" method="POST" id="testForm">
             {% for q in questions %}
-            <div class="question-block" id="q-block-{{ q.id }}">
+            <div class="question-block" style="animation-delay: {{ loop.index0 * 0.1 }}s">
                 <p class="question-number">Pertanyaan {{ q.id }}</p>
                 <div class="options-container">
                     <label class="option-card">
@@ -44,7 +45,7 @@
             </div>
             {% endfor %}
 
-            <button type="submit" class="btn btn-primary submit-btn">Lihat Hasil</button>
+            <button type="submit" class="btn btn-primary" style="margin-top: 20px;">Lihat Hasil</button>
         </form>
     </div>
 
@@ -52,27 +53,15 @@
         const totalQuestions = {{ questions|length }};
 
         function updateProgress() {
-            // Count checked radio buttons
             const checkedInputs = document.querySelectorAll('input[type="radio"]:checked').length;
             const percentage = (checkedInputs / totalQuestions) * 100;
 
-            // Update progress bar UI
             document.getElementById('progressBar').style.width = percentage + '%';
             document.getElementById('progressText').innerText = checkedInputs + ' / ' + totalQuestions + ' Terjawab';
-
-            // Auto-scroll to the next unanswered question (optional, can be improved)
-            if (checkedInputs < totalQuestions) {
-                // Find next unanswered
-                let blocks = document.querySelectorAll('.question-block');
-                for (let i = 0; i < blocks.length; i++) {
-                    if (!blocks[i].querySelector('input[type="radio"]:checked')) {
-                         // Option: un-comment to enable auto-scroll
-                         // blocks[i].scrollIntoView({ behavior: 'smooth', block: 'center' });
-                         break;
-                    }
-                }
-            }
         }
+
+        // Initialize on load in case of back navigation
+        window.onload = updateProgress;
     </script>
 </body>
 </html>

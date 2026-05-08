@@ -1,10 +1,11 @@
+import os
 import json
 import uuid
 from urllib.parse import quote
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 
 app = Flask(__name__)
-app.secret_key = 'super_secret_key'  # In production, use a secure random key!
+app.secret_key = os.environ.get('SECRET_KEY', 'default_dev_key_only_change_in_prod')
 
 # Load questions from JSON
 with open('app/questions.json', 'r') as f:
