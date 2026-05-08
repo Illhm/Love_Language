@@ -1,18 +1,29 @@
-from fastapi import FastAPI, Request, Form, HTTPException, Cookie, Response, Depends
-from fastapi.responses import HTMLResponse, RedirectResponse
-from fastapi.templating import Jinja2Templates
-from fastapi.staticfiles import StaticFiles
 import json
 import uuid
 import urllib.parse
 from typing import Optional, Dict
+import uvicorn
+
+from fastapi import FastAPI, Request, Form, HTTPException, Cookie, Response, Depends
+from fastapi.responses import HTMLResponse, RedirectResponse
+from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 
+# Inisialisasi folder untuk file HTML
 templates = Jinja2Templates(directory="templates")
+
+# Mount folder static (opsional, jika kamu punya file CSS/JS di folder 'static')
+# app.mount("/static", StaticFiles(directory="static"), name="static")
+
 # Load questions
-with open("questions.json", "r") as f:
-    QUESTIONS = json.load(f)
+try:
+    with open("questions.json", "r") as f:
+        QUESTIONS = json.load(f)
+except FileNotFoundError:
+    print("Warning: File questions.json tidak ditemukan. Buat file tersebut agar aplikasi berjalan normal.")
+    QUESTIONS = []
 
 # In-memory session store (for simple double-submission prevention)
 # In production, use Redis or a proper database
@@ -57,6 +68,8 @@ async def submit_test(request: Request, response: Response):
     }
 
     total_questions = len(QUESTIONS)
+    if total_questions == 0:
+        raise HTTPException(status_code=500, detail="Data pertanyaan kosong.")
 
     for q in QUESTIONS:
         q_id = str(q["id"])
@@ -68,7 +81,7 @@ async def submit_test(request: Request, response: Response):
         # Find the language for the selected option
         selected_language = None
         for opt in q["options"]:
-            if opt["id"] == selected_option_id:
+            if str(opt["id"]) == str(selected_option_id):
                 selected_language = opt["language"]
                 break
 
@@ -115,3 +128,8 @@ async def submit_test(request: Request, response: Response):
         "whatsapp_link": whatsapp_link,
         "total_questions": total_questions
     })
+
+# --- BLOK INI UNTUK MENJALANKAN SERVER DI PORT 8000 ---
+if __name__ == "__main__":
+    print("Menjalankan server di http://127.0.0.1:8080")
+    uvicorn.run("main:app", host="127.0.0.1", port=8080, reload=True)
