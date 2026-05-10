@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Language Test</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glass-container">
+        <div style="text-align: center;"><div class="badge">❤️ LOVE LANGUAGE QUIZ</div></div>
+        <h1>Kenali <span style="color: #8250DF;">Bahasa Cinta</span> Anda</h1>
+        <p class="hero-subtitle">Temukan cara terdalam Anda dalam memberi dan menerima cinta.</p>
+
+        <div class="feature-grid">
+            <div class="feature-box">
+                <div class="feature-title">Gratis</div>
+                <div class="feature-desc">Tanpa biaya, langsung dapat hasil</div>
+            </div>
+            <div class="feature-box">
+                <div class="feature-title">5 Menit</div>
+                <div class="feature-desc">Hanya 30 pertanyaan pilihan</div>
+            </div>
+            <div class="feature-box">
+                <div class="feature-title">Privat</div>
+                <div class="feature-desc">Data Anda aman & terlindungi</div>
+            </div>
+        </div>
+
+        <div class="pills-container">
+            <div class="pill-box">💬 Words of Affirmation</div>
+            <div class="pill-box">⏰ Quality Time</div>
+            <div class="pill-box">🎁 Receiving Gifts</div>
+            <div class="pill-box">🤝 Acts of Service</div>
+            <div class="pill-box">💕 Physical Touch</div>
+        </div>
+
+        <a href="{{ url_for('test') }}" class="btn btn-primary">MULAI TES LOVE LANGUAGE</a>
+    </div>
+</body>
+</html>

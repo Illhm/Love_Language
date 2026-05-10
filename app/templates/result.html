@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Tes Love Language</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="glass-container">
+
+        <div class="result-header">
+            <p style="font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #64748b; font-weight: 600;">Hasil Tes Anda</p>
+        </div>
+
+        <!-- Glowing Primary Card -->
+        <div class="primary-lang-container">
+            <h1 class="primary-title">{{ primary.language }}</h1>
+            <div class="primary-percent">{{ primary.percentage }}%</div>
+            <p class="primary-desc">
+                {% if primary.language == 'Acts of Service' %}
+                    Tindakan nyata berbicara lebih keras dari kata-kata. Anda merasa sangat dicintai saat pasangan membantu meringankan beban Anda tanpa diminta.
+                {% elif primary.language == 'Words of Affirmation' %}
+                    Kata-kata memiliki kekuatan magis bagi Anda. Anda merasa paling dicintai melalui pujian tulus, apresiasi, dan kalimat cinta verbal.
+                {% elif primary.language == 'Receiving Gifts' %}
+                    Bagi Anda, hadiah adalah simbol visual dari cinta. Anda merasa dicintai saat melihat usaha dan pikiran pasangan dalam memberikan sesuatu yang bermakna.
+                {% elif primary.language == 'Physical Touch' %}
+                    Sentuhan fisik adalah pelukan emosional bagi Anda. Anda merasa paling terhubung melalui pelukan, genggaman tangan, dan kedekatan fisik.
+                {% elif primary.language == 'Quality Time' %}
+                    Perhatian penuh tak terbagi adalah cinta sejati. Anda merasa paling dihargai saat pasangan meluangkan waktu khusus untuk Anda tanpa gangguan.
+                {% endif %}
+            </p>
+        </div>
+
+        <!-- Animated Ranking Section -->
+        <div class="rank-section">
+            <h3 class="rank-title">Profil Bahasa Cinta Lengkap</h3>
+
+            {% for r in results %}
+            <div class="rank-item">
+                <div class="rank-header">
+                    <span>{{ loop.index }}. {{ r.language }}</span>
+                    <span style="opacity: 0.8; font-size: 12px;">{{ r.percentage }}%</span>
+                </div>
+                <div class="rank-bar-bg">
+                    <!-- Progress bar fills are animated in JS to slide from 0 -->
+                    <div class="rank-bar-fill color-{{ loop.index0 }}" data-width="{{ r.percentage }}%"></div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Action Card -->
+        <div class="share-section">
+            <p style="font-size: 14px; margin-bottom: 20px;">Bagikan hasil ini dengan pasangan agar hubungan semakin harmonis!</p>
+
+            <a href="{{ wa_link }}" target="_blank" class="btn btn-wa">
+                <i class="fa-brands fa-whatsapp"></i> Bagikan ke WhatsApp
+            </a>
+
+            <form action="{{ url_for('reset') }}" method="GET">
+                <button type="submit" class="btn btn-reset">Ulangi Tes</button>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        // Trigger progress bar animations on load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const bars = document.querySelectorAll('.rank-bar-fill');
+                bars.forEach(bar => {
+                    bar.style.width = bar.getAttribute('data-width');
+                });
+            }, 300); // slight delay for visual effect
+        });
+    </script>
+</body>
+</html>
