@@ -9,24 +9,34 @@
 </head>
 <body>
     <div class="glass-container">
-        <h1>Bahasa Cinta Anda</h1>
+        <div style="text-align: center;"><div class="badge">❤️ LOVE LANGUAGE QUIZ</div></div>
+        <h1>Kenali <span style="color: #8250DF;">Bahasa Cinta</span> Anda</h1>
         <p class="hero-subtitle">Temukan cara terdalam Anda dalam memberi dan menerima cinta.</p>
 
-        <div class="instructions-card">
-            <strong>Instruksi:</strong>
-            <p style="margin-top: 8px;">Tes ini terdiri dari <strong>30 pasang pernyataan</strong>. Untuk setiap pasangan, pilih salah satu yang paling membuat Anda merasa dicintai.</p>
-            <ul>
-                <li>Hanya satu pilihan per pasangan.</li>
-                <li>Pilih yang paling sesuai dengan hati Anda.</li>
-                <li>Jawab semua pertanyaan untuk hasil yang akurat.</li>
-            </ul>
+        <div class="feature-grid">
+            <div class="feature-box">
+                <div class="feature-title">Gratis</div>
+                <div class="feature-desc">Tanpa biaya, langsung dapat hasil</div>
+            </div>
+            <div class="feature-box">
+                <div class="feature-title">5 Menit</div>
+                <div class="feature-desc">Hanya 30 pertanyaan pilihan</div>
+            </div>
+            <div class="feature-box">
+                <div class="feature-title">Privat</div>
+                <div class="feature-desc">Data Anda aman & terlindungi</div>
+            </div>
         </div>
 
-        <div class="ethical-note">
-            Tes ini dirancang sebagai alat untuk membantu komunikasi dan pemahaman dalam hubungan, bukan sebagai diagnosis psikologis resmi.
+        <div class="pills-container">
+            <div class="pill-box">💬 Words of Affirmation</div>
+            <div class="pill-box">⏰ Quality Time</div>
+            <div class="pill-box">🎁 Receiving Gifts</div>
+            <div class="pill-box">🤝 Acts of Service</div>
+            <div class="pill-box">💕 Physical Touch</div>
         </div>
 
-        <a href="{{ url_for('test') }}" class="btn btn-primary">Mulai Tes Sekarang</a>
+        <a href="{{ url_for('test') }}" class="btn btn-primary">MULAI TES LOVE LANGUAGE</a>
     </div>
 </body>
 </html>
