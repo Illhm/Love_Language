@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Language Test</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glass-container">
+        <h1>Bahasa Cinta Anda</h1>
+        <p class="hero-subtitle">Temukan cara terdalam Anda dalam memberi dan menerima cinta.</p>
+
+        <div class="instructions-card">
+            <strong>Instruksi:</strong>
+            <p style="margin-top: 8px;">Tes ini terdiri dari <strong>30 pasang pernyataan</strong>. Untuk setiap pasangan, pilih salah satu yang paling membuat Anda merasa dicintai.</p>
+            <ul>
+                <li>Hanya satu pilihan per pasangan.</li>
+                <li>Pilih yang paling sesuai dengan hati Anda.</li>
+                <li>Jawab semua pertanyaan untuk hasil yang akurat.</li>
+            </ul>
+        </div>
+
+        <div class="ethical-note">
+            Tes ini dirancang sebagai alat untuk membantu komunikasi dan pemahaman dalam hubungan, bukan sebagai diagnosis psikologis resmi.
+        </div>
+
+        <a href="{{ url_for('test') }}" class="btn btn-primary">Mulai Tes Sekarang</a>
+    </div>
+</body>
+</html>
